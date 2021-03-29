@@ -1,0 +1,208 @@
+body{
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h2{
+  position: absolute;
+  left:10px;
+  top:100px;
+  
+  font-size: 6em;
+  letter-spacing: 15px;
+  color:#10262c;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect:below 1px linear-gradient(transparent,#0004) ;
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+  0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+  {
+    color:#06303b;
+    text-shadow:none;
+  }
+  18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+  
+  {
+    color:#fff;
+    text-shadow: 0 0 10px #4a0770,
+    0 0 20px #5f03f4,
+    0 0 40px #5f03f4,
+    0 0 80px #5f03f4,
+    0 0 160px #5f03f4;
+  }
+}
+
+
+
+
+.night{
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  transform: rotateZ(40deg);
+}
+
+.star{
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  height: 10px;
+  background: linear-gradient(-45deg, #414246, rgba(0, 0, 255, 0));
+  border-radius: 1500px;
+  filter: drop-shadow(0 0 6px #2eabaf);
+  animation: tail 3s ease-in-out infinite,
+             falling 3s ease-in-out infinite;
+}
+
+@keyframes tail{
+  0%{
+    width: 0;
+  }
+  30%{
+    width: 100px;
+  }
+  100%{
+    width: 0;
+  }
+}
+
+@keyframes falling{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(300px);
+  }
+}
+
+.star::before, .star::after{
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  height: 4px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #9a9ca0, rgba(0, 0, 255, 0));
+  border-radius: 100%;
+  transform: translateX(50%) rotateZ(45deg);
+  animation: shining 3s ease-in-out infinite;
+}
+
+@keyframes shining{
+  0%{
+    width: 0;
+  }
+  50%{
+    width: 30px;
+  }
+  100%{
+    width: 0;
+  }
+}
+
+.star::after{
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+.star:nth-child(1){
+  top: calc(50% - 100px);
+  left: calc(50% - 250px);
+  animation-delay: 1s;
+}
+
+.star:nth-child(1)::before, .star:nth-child(1)::after{
+  animation-delay: 1s;
+}
+
+.star:nth-child(2){
+  top: calc(50% - 50px);
+  left: calc(50% - 200px);
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(2)::before, .star:nth-child(2)::after{
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(3){
+  top: calc(50% - 0px);
+  left: calc(50% - 150px);
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(3)::before, .star:nth-child(3)::after{
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(4){
+  top: calc(50% - -50px);
+  left: calc(50% - 200px);
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(4)::before, .star:nth-child(4)::after{
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(5){
+  top: calc(50% - -100px);
+  left: calc(50% - 250px);
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(5)::before, .star:nth-child(5)::after{
+  animation-delay: 1.8s;
+}
+.box{
+  width: 1000px;
+  padding: 500px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  font-family: consolas;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #174463;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: rgb(109, 131, 146);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  font-family: consolas;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2d0c86;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #3b053b;
+}
